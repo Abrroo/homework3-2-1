@@ -2,8 +2,7 @@
 
 enum class months
 {
-	null,
-	January, February, March,
+	January = 1, February, March,
 	April, May, June, July,
 	August, September, October,
 	November, December
@@ -15,13 +14,13 @@ int main()
 	setlocale(LC_ALL, "Russian");
 
 	int month = 0;
-	months enum_month = months::null;
+	months enum_month = months::January;
 
 	do
 	{
 		std::cout << "Введите номер месяца: ";
 		std::cin >> month;
-		if (month > 13 || month <= -1)
+		if (month > 13 || month < 0)
 		{
 			std::cout << "Нет такого месяца!" << std::endl;
 		}
@@ -42,7 +41,6 @@ int main()
 			case months::October:	std::cout << "Октябрь" << std::endl; break;
 			case months::November:	std::cout << "Ноябрь" << std::endl; break;
 			case months::December:	std::cout << "Декабрь" << std::endl; break;
-			case months::null:		break;
 			default:				break;
 			}
 		} 
